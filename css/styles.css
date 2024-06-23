@@ -5,18 +5,43 @@
     --color-secondary-gray: #4A4A4A;
     --color-black: black;
     --color-gray-footer: #747272;
+    --color-light-icons: #FFFFFF;
     }
 
 /* Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     color: var(--color-primery);
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 400;
+    margin: 0;
 }
 
 ul {
+   margin: 0;
+   padding: 0;
     list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+}
+
+a {
+    display: inline-block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 /* Button */
@@ -27,6 +52,7 @@ ul {
     border-color: var(--color-brand);
     cursor: pointer;
     font-weight: 600;
+    padding: 16px 32px;
 }
 
 button:hover{
@@ -42,15 +68,46 @@ button:hover{
 
 .link:hover {
     color: var(--color-brand);
-    font-weight: 700;
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 40px;
+}
+
+.header-menu {
+    display: flex;
+    gap: 56px;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 /* Hero section */
+.hero-section {
+display: flex;
+padding: 166.48px 0;
+background-image: url('../images/face-massage.jpg');
+background-repeat: no-repeat;
+background-position: right top;
+}
+
 .secondary-title {
     color:var(--color-primery);
+    padding: 16px 0;
 }
 
 .hero-title {
+    margin-bottom: 0;
+    padding-bottom: 40px;
     color: var(--color-brand);
     font-size: 140px;
         font-family: Play;
@@ -60,17 +117,69 @@ button:hover{
 }
 
 .hero-p {
+    font-size: 12px;
     color:var(--color-secondary-gray);
     line-height: 1.5;
+    max-width: 238px;
 }
 
 /* About us section */
+.about-us-section {
+    padding: 88px 0;
+    margin-bottom: 40px;
+}
+
+.about-us-container {
+    display: flex;
+    gap: 28px;
+    justify-content: space-between;
+}
+
+.about-us-p {
+width: 709px;
+}
+
+.photos-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.face-arrow-down {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 327px ;
+    height: 327px;
+    margin-left: 32px;
+    
+}
+
+.face-arrow-up {
+    margin-left: 196px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 327px;
+    height: 327px;
+}
+
 
 .section-title {
     color: var(--color-primery);
     font-size: 64px;
         font-family: Play;
         font-weight: 700;
+}
+
+.section-title.centered {
+    text-align: centers;
+}
+
+.about-us-text p {
+    margin-bottom: 40px;
+}
+
+.about-us-text p:last-child {
+    margin-bottom: 0;
 }
 
 .p {
@@ -89,7 +198,12 @@ font-weight: 600;
     text-transform: capitalize;
 }
 
+
 /* Advantages section */
+.advantages-section {
+    padding: 48px 0;
+    margin-bottom: 48px;
+}
 
 .advantages-section-title {
 text-align: center;
@@ -103,19 +217,96 @@ font-family: Play;
 }
 
 .advantages-list {
+    display: flex;
     color: var(--color-black);
     line-height: 1.3;
+    gap: 56px;
+    justify-content: center;
+}
+
+.advantage {
+   text-align: center;
+    padding: 24px 32px;
+    border: 1px solid;
+    border-color: var(--color-secondary-white);
+    border-radius: 32px;
+    width: 316px;
+    height: 181px;
 }
 
 /* Procedures section */
+.procedures-container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.procedure {
+    padding: 16px;
+    height: 456px;
+    width: 344px;
+    border: 1px solid lightgray;
+    border-top-right-radius: 120px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 4px;
+    background-image: linear-gradient(180deg, rgba(1, 28, 68, 0) 47%, rgba(1, 28, 68, 0.73) 83%, #011C44 99%);
+}
 
 .procedures-list {
+    display: flex;
     color: var( --color-secondary-white);
     font-size: 22px;
     line-height: 1.18;
+    gap: 16px;
 }
 
+.procedure-item {
+    flex-basis: calc((100%) - 32px / 3);
+}
+
+/* Carousel */
+.carousel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--color-primery);
+    cursor: pointer;
+
+}
+
+.carousel-arrow {
+fill: var(--color-primery);
+}
+
+.carousel-button:hover {
+background-color: var(--color-brand);
+}
+
+.carousel-button:hover .carousel-arrow{
+    fill: var(--color-light-icons);
+}
 /* Contacts section */
+.contacts-section {
+padding-bottom: 96px;
+}
+
+.contacts-container {
+    display: flex;
+    gap: 32px;
+}
+
+.contacts-map {
+flex-shrink: 0;
+border: none;
+border-radius: 32px;
+}
 
 .contacts-p {
     color: var(--color-secondary-white);
@@ -128,11 +319,42 @@ font-family: Play;
 }
 
 /* Footer */
+.footer {
+padding: 56px 0;
+}
+
+.footer-container {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+}
+
+.footer-logo,
+.footer-menu {
+    flex-grow: 1;
+}
+
+.address-list,
+.address-info {
+    flex-grow: 1;
+}
+
 .footer-link {
     color: var(--color-secondary-white);
     text-decoration: none;
     font-size: 16px;
 }
+
+.address-icon {
+fill: var(--color-light-icons)
+}
+
 .p-footer {
     color: var(--color-gray-footer);
 }
